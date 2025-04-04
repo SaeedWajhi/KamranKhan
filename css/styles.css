@@ -2,10 +2,12 @@
 
 /* CSS Variables */
 :root {
-    --primary-bg-color: #f8f9fa; /* Light background */
-    --primary-font-color: #e43d12; /* Dark font color */
-    --secondary-bg-color: #666; /* Dark background */ /*343a40*/
-    --secondary-font-color: #ffffff; /* Light font color */
+    --primary-bg-color: #f8f9fa;
+    --primary-font-color: #e43d12;
+    --secondary-bg-color: #666;
+    --secondary-font-color: #ffffff;
+    --animation-timing: 0.8s;
+    --animation-delay: 0.3s; /* Add this new variable for delay between cards */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,42 +99,30 @@ h2 {
 }
 
 
-/* Services section */
-/* .service {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-} */
 
+/* Services section */
 .service-card {
-    background: #ffffff;
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.service-card h3 {
-    color: var(--primary-font-color);
-    margin-bottom: 1rem;
+.service-card.visible {
+    animation: fadeInUp var(--animation-timing) ease forwards;
+    animation-delay: calc(var(--animation-delay) * var(--order));
 }
-
-.service-card p {
-    color: #666;
-    margin-bottom: 0;
-}
-
-#services {
-    background-color: #f8f9fa;
-}
-
-
 
 /* Clients section */
 #clients {

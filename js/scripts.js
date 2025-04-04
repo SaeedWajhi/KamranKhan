@@ -62,3 +62,22 @@ document.addEventListener("keydown", function (e) {
         }
     }
 });
+
+
+// Services cards animation
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.setProperty('--order', index + 1);
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.service-card').forEach((card) => {
+        observer.observe(card);
+    });
+});
