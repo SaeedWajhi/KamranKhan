@@ -4,8 +4,12 @@
 :root {
     --primary-bg-color: #f8f9fa; /* Light background */
     --primary-font-color: #e43d12; /* Dark font color */
-    --secondary-bg-color: #343a40; /* Dark background */
+    --secondary-bg-color: #666; /* Dark background */ /*343a40*/
     --secondary-font-color: #ffffff; /* Light font color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-font-color);
 }
 
 /* Body styling */
@@ -13,7 +17,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--primary-bg-color);
-    color: var(--primary-font-color);
+    color: var(--secondary-bg-color);
 }
 
 /* Navbar styling */
@@ -92,13 +96,43 @@ h2 {
     padding: 20px;
 }
 
+
 /* Services section */
-.service {
+/* .service {
     margin: 20px 0;
     padding: 15px;
     border: 1px solid #dee2e6;
     border-radius: 5px;
+} */
+
+.service-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
 }
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: var(--primary-font-color);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+#services {
+    background-color: #f8f9fa;
+}
+
+
 
 /* Clients section */
 #clients {
